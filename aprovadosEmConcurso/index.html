@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Faz a página adaptar-se a celulares e tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Aprovados em Concurso</title>
+
+    <!-- Conecta o arquivo CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>📋 Aprovados em Concurso</h1>
+
+      <p class="orientacao">
+        Cadastre os candidatos e informe a nota de corte para visualizar os
+        aprovados.
+      </p>
+
+      <!-- Formulário para cadastrar candidatos -->
+      <form id="formCandidato">
+        <div class="campo">
+          <label for="nomeCandidato">Nome do candidato:</label>
+
+          <input
+            type="text"
+            id="nomeCandidato"
+            placeholder="Exemplo: Ana Silva"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="campo">
+          <label for="numeroAcertos">Número de acertos:</label>
+
+          <input
+            type="number"
+            id="numeroAcertos"
+            min="0"
+            placeholder="Exemplo: 35"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn-adicionar">Adicionar candidato</button>
+      </form>
+
+      <section>
+        <h2>Candidatos cadastrados</h2>
+
+        <!-- Lista de todos os candidatos -->
+        <ul id="listaCandidatos"></ul>
+      </section>
+
+      <section class="area-corte">
+        <label for="notaCorte">Nota de corte:</label>
+
+        <input type="number" id="notaCorte" min="0" placeholder="Exemplo: 25" />
+
+        <button type="button" id="btnAprovados" class="btn-aprovados">
+          Mostrar aprovados
+        </button>
+
+        <button type="button" id="btnLimpar" class="btn-limpar">
+          Limpar dados
+        </button>
+      </section>
+
+      <section>
+        <h2>Candidatos aprovados</h2>
+
+        <!-- Área em que os aprovados serão mostrados -->
+        <div id="resultado" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <!-- Conecta o arquivo JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

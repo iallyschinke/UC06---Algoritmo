@@ -1,0 +1,216 @@
+/* Remove margens e espaçamentos automáticos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Configuração geral da página */
+body {
+  min-height: 100vh;
+  padding: 20px;
+
+  background-color: #e2e8f0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1e293b;
+}
+
+/* Caixa principal */
+.container {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 30px auto;
+  padding: 30px;
+
+  border-radius: 12px;
+  background-color: #ffffff;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Título principal */
+h1 {
+  margin-bottom: 10px;
+
+  text-align: center;
+  color: #1d4ed8;
+}
+
+/* Texto de orientação */
+.orientacao {
+  margin-bottom: 25px;
+
+  text-align: center;
+  color: #475569;
+}
+
+/* Formulário */
+form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+}
+
+/* Agrupa o texto e o campo */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Textos dos campos */
+label {
+  font-weight: bold;
+}
+
+/* Campos de entrada */
+input {
+  width: 100%;
+  padding: 12px;
+
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+/* Destaque ao selecionar um campo */
+input:focus {
+  outline: 2px solid #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* Configuração geral dos botões */
+button {
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* Botão de adicionar */
+.btn-adicionar {
+  grid-column: 1 / -1;
+
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-adicionar:hover {
+  background-color: #1d4ed8;
+}
+
+/* Títulos das seções */
+h2 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  color: #1e3a8a;
+}
+
+/* Lista dos candidatos */
+#listaCandidatos {
+  padding-left: 25px;
+
+  line-height: 1.8;
+}
+
+/* Área da nota de corte */
+.area-corte {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+
+  margin-top: 25px;
+  padding: 20px;
+
+  border-radius: 8px;
+  background-color: #f1f5f9;
+}
+
+/* O texto ocupa toda a primeira linha */
+.area-corte label {
+  grid-column: 1 / -1;
+}
+
+/* Botão de mostrar aprovados */
+.btn-aprovados {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.btn-aprovados:hover {
+  background-color: #15803d;
+}
+
+/* Botão de limpar */
+.btn-limpar {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.btn-limpar:hover {
+  background-color: #b91c1c;
+}
+
+/* Área do resultado */
+#resultado {
+  padding: 15px;
+
+  border-radius: 8px;
+  background-color: #dcfce7;
+
+  line-height: 1.8;
+}
+
+/* Esconde a área enquanto estiver vazia */
+#resultado:empty {
+  display: none;
+}
+
+/* Cada candidato aprovado */
+.aprovado {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-bottom: 8px;
+  padding: 12px;
+
+  border-left: 5px solid #16a34a;
+  background-color: #f0fdf4;
+}
+
+/* Mensagem de erro ou aviso */
+.aviso {
+  color: #991b1b;
+  background-color: #fee2e2;
+}
+
+/* Adaptação para telas menores */
+@media (max-width: 600px) {
+  form,
+  .area-corte {
+    grid-template-columns: 1fr;
+  }
+
+  .area-corte label {
+    grid-column: auto;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .aprovado {
+    flex-direction: column;
+  }
+}
