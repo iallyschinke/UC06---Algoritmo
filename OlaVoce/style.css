@@ -1,0 +1,592 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --preto: #050510;
+  --azul-escuro: #090920;
+  --roxo: #7c3aed;
+  --roxo-neon: #a855f7;
+  --lilas: #d8b4fe;
+  --ciano: #22d3ee;
+  --ciano-neon: #00f7ff;
+  --branco: #f8fafc;
+}
+
+/* =========================
+   CORPO DA PÁGINA
+========================= */
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 25px;
+
+  font-family: "Courier New", Courier, monospace;
+  color: var(--branco);
+
+  background:
+    linear-gradient(rgba(5, 5, 16, 0.82), rgba(5, 5, 16, 0.95)),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 49px,
+      rgba(34, 211, 238, 0.06) 50px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 49px,
+      rgba(168, 85, 247, 0.06) 50px
+    ),
+    radial-gradient(circle at 20% 20%, #4c1d95 0%, transparent 35%),
+    radial-gradient(circle at 80% 80%, #083344 0%, transparent 35%),
+    linear-gradient(135deg, var(--preto), var(--azul-escuro));
+}
+
+/* Grade cyberpunk ao fundo */
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(rgba(34, 211, 238, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.08) 1px, transparent 1px);
+
+  background-size: 45px 45px;
+
+  transform: perspective(500px) rotateX(60deg) scale(1.8);
+  transform-origin: center bottom;
+
+  opacity: 0.45;
+
+  animation: moverGrade 8s linear infinite;
+}
+
+/* Linhas de monitor */
+
+body::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(255, 255, 255, 0.025) 4px
+  );
+
+  animation: scanTela 7s linear infinite;
+}
+
+/* =========================
+   TÍTULO HOLOGRÁFICO
+========================= */
+
+h1 {
+  position: relative;
+  z-index: 2;
+
+  margin-bottom: 35px;
+
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  color: transparent;
+
+  background: linear-gradient(
+    90deg,
+    var(--ciano-neon),
+    var(--lilas),
+    var(--roxo-neon),
+    var(--ciano-neon)
+  );
+
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  filter: drop-shadow(0 0 7px var(--ciano))
+    drop-shadow(0 0 18px var(--roxo-neon));
+
+  animation:
+    holografico 4s linear infinite,
+    flutuar 3s ease-in-out infinite;
+}
+
+/* Cópia fantasma do título */
+
+h1::before,
+h1::after {
+  content: "Programa Olá Você!";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+h1::before {
+  color: var(--ciano-neon);
+
+  transform: translate(-3px, 1px);
+
+  opacity: 0.4;
+
+  clip-path: inset(0 0 55% 0);
+
+  animation: glitchCima 2.5s infinite;
+}
+
+h1::after {
+  color: var(--roxo-neon);
+
+  transform: translate(3px, -1px);
+
+  opacity: 0.4;
+
+  clip-path: inset(55% 0 0 0);
+
+  animation: glitchBaixo 2s infinite;
+}
+
+/* =========================
+   PAINEL PRINCIPAL
+========================= */
+
+body > p:first-of-type {
+  width: min(100%, 570px);
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  padding: 30px;
+
+  color: var(--lilas);
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.08),
+    rgba(168, 85, 247, 0.14)
+  );
+
+  border: 1px solid rgba(34, 211, 238, 0.75);
+
+  border-radius: 4px 22px 4px 22px;
+
+  box-shadow:
+    0 0 10px rgba(34, 211, 238, 0.5),
+    0 0 30px rgba(168, 85, 247, 0.35),
+    inset 0 0 20px rgba(34, 211, 238, 0.08);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  animation: painelPulsando 3s ease-in-out infinite;
+}
+
+/* Faixa holográfica atravessando o painel */
+
+body > p:first-of-type::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(34, 211, 238, 0.18) 45%,
+    rgba(216, 180, 254, 0.2) 50%,
+    transparent 65%
+  );
+
+  background-size: 250% 100%;
+
+  animation: faixaHolografica 4s linear infinite;
+}
+
+/* Cantos tecnológicos */
+
+body > p:first-of-type::after {
+  content: "";
+
+  position: absolute;
+  inset: -7px;
+
+  pointer-events: none;
+
+  border-top: 2px solid var(--roxo-neon);
+  border-right: 2px solid var(--ciano-neon);
+
+  border-radius: 4px 25px 4px 25px;
+
+  opacity: 0.65;
+}
+
+/* =========================
+   CAMPO DE TEXTO
+========================= */
+
+input {
+  flex: 1;
+  min-width: 220px;
+
+  position: relative;
+
+  padding: 15px 17px;
+
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ciano-neon);
+
+  background: rgba(2, 6, 23, 0.8);
+
+  border: 1px solid var(--roxo-neon);
+  border-left: 4px solid var(--ciano-neon);
+
+  border-radius: 2px 12px 2px 12px;
+
+  outline: none;
+
+  box-shadow:
+    inset 0 0 14px rgba(34, 211, 238, 0.08),
+    0 0 8px rgba(168, 85, 247, 0.25);
+
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: rgba(216, 180, 254, 0.55);
+}
+
+input:hover {
+  border-color: var(--ciano-neon);
+
+  box-shadow:
+    0 0 12px rgba(34, 211, 238, 0.45),
+    inset 0 0 18px rgba(34, 211, 238, 0.1);
+}
+
+input:focus {
+  transform: translateY(-2px);
+
+  border-color: var(--ciano-neon);
+
+  box-shadow:
+    0 0 8px var(--ciano-neon),
+    0 0 24px rgba(34, 211, 238, 0.6),
+    inset 0 0 18px rgba(168, 85, 247, 0.14);
+}
+
+/* =========================
+   BOTÃO CYBERPUNK
+========================= */
+
+button {
+  position: relative;
+  overflow: hidden;
+
+  padding: 15px 24px;
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  color: var(--branco);
+
+  background: linear-gradient(135deg, var(--roxo), #312e81, #0891b2);
+
+  border: 1px solid var(--ciano-neon);
+  border-radius: 2px 12px 2px 12px;
+
+  box-shadow:
+    0 0 8px rgba(34, 211, 238, 0.65),
+    inset 0 0 12px rgba(255, 255, 255, 0.08);
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+/* Brilho atravessando o botão */
+
+button::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -130%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+
+  transform: skewX(-25deg);
+
+  transition: 0.55s;
+}
+
+button:hover::before {
+  left: 150%;
+}
+
+button:hover {
+  color: var(--ciano-neon);
+
+  transform: translateY(-4px) scale(1.03);
+
+  background: linear-gradient(135deg, #4c1d95, #164e63, #6d28d9);
+
+  box-shadow:
+    0 0 10px var(--ciano-neon),
+    0 0 25px rgba(34, 211, 238, 0.7),
+    0 0 45px rgba(168, 85, 247, 0.55);
+}
+
+button:active {
+  transform: scale(0.95);
+
+  box-shadow:
+    inset 0 0 20px var(--ciano-neon),
+    0 0 12px var(--roxo-neon);
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem {
+  min-height: 45px;
+
+  position: relative;
+  z-index: 2;
+
+  margin-top: 30px;
+  padding: 10px 20px;
+
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px;
+
+  color: var(--ciano-neon);
+
+  text-shadow:
+    0 0 5px var(--ciano-neon),
+    0 0 12px var(--ciano-neon),
+    0 0 22px var(--roxo-neon);
+
+  animation:
+    mensagemNeon 1.5s ease-in-out infinite alternate,
+    flutuar 3s ease-in-out infinite;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes holografico {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 300% center;
+  }
+}
+
+@keyframes faixaHolografica {
+  0% {
+    background-position: 180% center;
+  }
+
+  100% {
+    background-position: -100% center;
+  }
+}
+
+@keyframes painelPulsando {
+  0%,
+  100% {
+    box-shadow:
+      0 0 10px rgba(34, 211, 238, 0.45),
+      0 0 25px rgba(168, 85, 247, 0.3),
+      inset 0 0 20px rgba(34, 211, 238, 0.08);
+  }
+
+  50% {
+    box-shadow:
+      0 0 17px rgba(34, 211, 238, 0.75),
+      0 0 45px rgba(168, 85, 247, 0.55),
+      inset 0 0 30px rgba(168, 85, 247, 0.12);
+  }
+}
+
+@keyframes mensagemNeon {
+  from {
+    opacity: 0.78;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flutuar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes moverGrade {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 90px;
+  }
+}
+
+@keyframes scanTela {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 100px;
+  }
+}
+
+@keyframes glitchCima {
+  0%,
+  85%,
+  100% {
+    transform: translate(0);
+  }
+
+  87% {
+    transform: translate(-5px, 1px);
+  }
+
+  89% {
+    transform: translate(4px, -1px);
+  }
+
+  91% {
+    transform: translate(-2px, 1px);
+  }
+}
+
+@keyframes glitchBaixo {
+  0%,
+  82%,
+  100% {
+    transform: translate(0);
+  }
+
+  84% {
+    transform: translate(5px, -1px);
+  }
+
+  86% {
+    transform: translate(-4px, 2px);
+  }
+
+  88% {
+    transform: translate(2px, -1px);
+  }
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 600px) {
+  body {
+    overflow-y: auto;
+  }
+
+  h1 {
+    letter-spacing: 2px;
+  }
+
+  body > p:first-of-type {
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 24px 18px;
+  }
+
+  input,
+  button {
+    width: 100%;
+  }
+
+  button {
+    padding: 16px;
+  }
+}
+
+/* Respeita usuários que preferem menos animações */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

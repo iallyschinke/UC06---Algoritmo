@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Repete Fruta</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Repete Fruta</h1>
+      <!-- Formulário para receber os dados do usuário -->
+      <form id="formFruta">
+        <label for="nomeFruta">Nome da fruta:</label>
+        <input
+          type="text"
+          id="nomeFruta"
+          placeholder="Exemplo: Banana"
+          required
+        />
+
+        <label for="quantidade">Quantidade de repetições:</label>
+        <input
+          type="number"
+          id="quantidade"
+          placeholder="Exemplo: 4"
+          required
+        />
+
+        <button type="submit">Repetir fruta</button>
+      </form>
+
+      <!-- Local em que o JavaScript exibirá o resultado -->
+      <p id="resultado" aria-live="polite"></p>
+    </main>
+
+    <!-- Conecta o arquivo JavaScript ao HTML -->
+    <script src="script.js"></script>
+  </body>
+</html>

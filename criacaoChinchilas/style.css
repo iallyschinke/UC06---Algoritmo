@@ -1,0 +1,116 @@
+/* Remove margens e espaçamentos automáticos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Configurações gerais da página */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background-color: #f1f5f9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Caixa principal */
+.container {
+  width: 100%;
+  max-width: 520px;
+
+  padding: 30px;
+  border-radius: 12px;
+
+  background-color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Título */
+h1 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #6d28d9;
+}
+
+/* Texto de orientação */
+p {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #475569;
+}
+
+/* Organiza os elementos do formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Textos dos campos */
+label {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #334155;
+}
+
+/* Campos de entrada */
+input {
+  width: 100%;
+  padding: 12px;
+
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+/* Destaque do campo selecionado */
+input:focus {
+  outline: 2px solid #8b5cf6;
+  border-color: #8b5cf6;
+}
+
+/* Botão */
+button {
+  margin-top: 15px;
+  padding: 12px;
+
+  border: none;
+  border-radius: 6px;
+
+  background-color: #7c3aed;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+  background-color: #6d28d9;
+}
+
+/* Área do resultado */
+#resultado {
+  margin-top: 24px;
+  padding: 15px;
+
+  border-radius: 6px;
+  background-color: #ede9fe;
+
+  color: #4c1d95;
+  line-height: 1.8;
+}
+
+/* Esconde a área enquanto estiver vazia */
+#resultado:empty {
+  display: none;
+}

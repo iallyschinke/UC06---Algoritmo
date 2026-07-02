@@ -1,0 +1,251 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   PÁGINA
+========================= */
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  color: #2f2618;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(77, 104, 54, 0.45),
+      rgba(18, 31, 18, 0.9)
+    ),
+    linear-gradient(135deg, #20351f, #0d180f);
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1 {
+  width: 100%;
+  max-width: 420px;
+
+  padding: 28px 25px 12px;
+
+  text-align: center;
+  font-size: 29px;
+  letter-spacing: 2px;
+
+  color: #d6b45f;
+
+  background: linear-gradient(rgba(37, 55, 31, 0.97), rgba(26, 40, 24, 0.97));
+
+  border: 2px solid #9d7b35;
+  border-bottom: none;
+  border-radius: 14px 14px 0 0;
+
+  text-shadow:
+    1px 1px 2px #000,
+    0 0 8px rgba(214, 180, 95, 0.4);
+
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Pequeno detalhe decorativo abaixo do título */
+
+h1::after {
+  content: "✦";
+
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 18px;
+  color: #b99443;
+}
+
+/* =========================
+   TEXTO DO CAMPO
+========================= */
+
+label {
+  width: 100%;
+  max-width: 420px;
+
+  padding: 18px 25px 9px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  color: #3f321e;
+
+  background-color: #e7d5a5;
+
+  border-left: 2px solid #9d7b35;
+  border-right: 2px solid #9d7b35;
+}
+
+/* =========================
+   CAMPO DE NÚMERO
+========================= */
+
+input {
+  width: calc(100% - 50px);
+  max-width: 370px;
+
+  padding: 13px;
+  margin-bottom: 15px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+
+  color: #332719;
+  background-color: #f4e5b8;
+
+  border: 2px solid #8e6d32;
+  border-radius: 6px;
+
+  outline: none;
+
+  box-shadow: inset 0 2px 5px rgba(87, 62, 24, 0.2);
+}
+
+/* Campo selecionado */
+
+input:focus {
+  border-color: #c49a3a;
+
+  box-shadow:
+    0 0 0 3px rgba(196, 154, 58, 0.25),
+    inset 0 2px 5px rgba(87, 62, 24, 0.2);
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+button {
+  width: calc(100% - 50px);
+  max-width: 370px;
+
+  padding: 13px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  color: #f4e6bd;
+
+  background: linear-gradient(to bottom, #526b38, #2e4328);
+
+  border: 2px solid #b18a3a;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+  transition: 0.2s;
+}
+
+/* Botão ao passar o mouse */
+
+button:hover {
+  background: linear-gradient(to bottom, #647f45, #395331);
+
+  color: #ffe9a6;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.4),
+    0 0 8px rgba(193, 155, 70, 0.35);
+}
+
+/* Botão ao clicar */
+
+button:active {
+  transform: translateY(0);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   RESULTADO
+========================= */
+
+#resultado {
+  width: 100%;
+  max-width: 420px;
+  min-height: 75px;
+
+  padding: 22px 25px;
+
+  text-align: center;
+  font-size: 19px;
+  font-weight: bold;
+
+  color: #4c391d;
+
+  background: linear-gradient(
+    rgba(235, 216, 166, 0.98),
+    rgba(214, 190, 132, 0.98)
+  );
+
+  border: 2px solid #9d7b35;
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.4),
+    inset 0 -5px 12px rgba(112, 79, 29, 0.15);
+}
+
+/* Símbolo decorativo antes do resultado */
+
+#resultado:not(:empty)::before {
+  content: "◆";
+
+  margin-right: 8px;
+
+  color: #816329;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 23px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  input,
+  button {
+    width: calc(100% - 40px);
+  }
+
+  #resultado {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Adapta a página para celulares e tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Jogos Eliminatórios</title>
+
+    <!-- Conecta o arquivo CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>⚽ Jogos Eliminatórios</h1>
+
+      <p class="orientacao">
+        Cadastre os clubes e depois gere a tabela de jogos.
+      </p>
+
+      <!-- Formulário para adicionar um clube -->
+      <form id="formClube">
+        <label for="nomeClube">Nome do clube:</label>
+
+        <div class="grupo-campo">
+          <input
+            type="text"
+            id="nomeClube"
+            placeholder="Exemplo: Flamengo"
+            autocomplete="off"
+            required
+          />
+
+          <button type="submit">Adicionar</button>
+        </div>
+      </form>
+
+      <!-- Botão usado para gerar os confrontos -->
+      <button type="button" id="btnGerar" class="btn-gerar">Gerar jogos</button>
+
+      <!-- Botão usado para limpar o vetor -->
+      <button type="button" id="btnLimpar" class="btn-limpar">
+        Limpar clubes
+      </button>
+
+      <section>
+        <h2>Clubes cadastrados</h2>
+
+        <!-- Lista dos clubes adicionados -->
+        <ul id="listaClubes"></ul>
+      </section>
+
+      <section>
+        <h2>Tabela de jogos</h2>
+
+        <!-- Área em que os confrontos serão mostrados -->
+        <div id="resultado" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <!-- Conecta o arquivo JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

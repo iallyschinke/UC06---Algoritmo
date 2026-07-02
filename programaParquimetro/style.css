@@ -1,0 +1,238 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   PÁGINA
+========================= */
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #1f2937;
+
+  background: linear-gradient(135deg, #eef4f8, #dfeaf2);
+}
+
+/* =========================
+   CARTÃO PRINCIPAL
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 430px;
+
+  padding: 32px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #cbd5e1;
+  border-top: 6px solid #0b5cab;
+  border-radius: 10px;
+
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+
+  position: relative;
+}
+
+/* Faixa institucional */
+
+.container::before {
+  content: "SERVIÇO DE ESTACIONAMENTO";
+
+  display: block;
+
+  margin-bottom: 20px;
+
+  padding-bottom: 10px;
+
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1.5px;
+
+  color: #0b5cab;
+
+  border-bottom: 1px solid #dbe4ec;
+}
+
+/* =========================
+   TÍTULO E DESCRIÇÃO
+========================= */
+
+h1 {
+  margin-bottom: 10px;
+
+  font-size: 28px;
+  text-align: center;
+
+  color: #17365d;
+}
+
+.descricao {
+  margin-bottom: 24px;
+
+  text-align: center;
+  line-height: 1.5;
+
+  color: #5b6775;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-size: 15px;
+  font-weight: bold;
+
+  color: #27364a;
+}
+
+input {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  font-size: 16px;
+
+  color: #1f2937;
+  background-color: #f8fafc;
+
+  border: 1px solid #aebdca;
+  border-radius: 6px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+input::placeholder {
+  color: #8a97a5;
+}
+
+input:focus {
+  background-color: #ffffff;
+
+  border-color: #0b5cab;
+
+  box-shadow: 0 0 0 3px rgba(11, 92, 171, 0.14);
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+button {
+  width: 100%;
+
+  margin-top: 6px;
+  padding: 13px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  color: #ffffff;
+
+  background-color: #0b5cab;
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #084b8a;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 6px 14px rgba(11, 92, 171, 0.22);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(11, 92, 171, 0.3);
+  outline-offset: 3px;
+}
+
+/* =========================
+   RESULTADO
+========================= */
+
+#resultado {
+  min-height: 70px;
+
+  margin-top: 24px;
+  padding: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  line-height: 1.5;
+  font-size: 17px;
+  font-weight: bold;
+
+  color: #17472a;
+  background-color: #eef8f1;
+
+  border: 1px solid #b8d8c1;
+  border-left: 5px solid #2f855a;
+  border-radius: 6px;
+}
+
+/* Esconde a caixa enquanto não houver mensagem */
+
+#resultado:empty {
+  display: none;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 24px 20px;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  .descricao {
+    font-size: 14px;
+  }
+
+  input,
+  button {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Verifica Velocidade</title>
+
+    <!-- Arquivo CSS que você fará depois -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Verifica Velocidade</h1>
+
+      <label for="velocidadePermitida"> Velocidade permitida: </label>
+
+      <input
+        type="number"
+        id="velocidadePermitida"
+        placeholder="Exemplo: 80"
+        min="1"
+      />
+
+      <label for="velocidadeCondutor"> Velocidade do condutor: </label>
+
+      <input
+        type="number"
+        id="velocidadeCondutor"
+        placeholder="Exemplo: 95"
+        min="0"
+      />
+
+      <button type="button" id="btnVerificar">Verificar</button>
+
+      <p id="resultado"></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

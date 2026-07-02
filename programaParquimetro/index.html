@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Programa Parquímetro</title>
+
+    <!-- Arquivo CSS que você fará depois -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Programa Parquímetro</h1>
+
+      <p class="descricao">Informe o valor inserido no parquímetro.</p>
+
+      <form id="formParquimetro">
+        <label for="valorInserido"> Valor inserido: </label>
+
+        <input
+          type="number"
+          id="valorInserido"
+          placeholder="Exemplo: 2,00"
+          min="0"
+          step="0.01"
+          required
+        />
+
+        <button type="submit">Calcular tempo</button>
+      </form>
+
+      <p id="resultado" aria-live="polite"></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

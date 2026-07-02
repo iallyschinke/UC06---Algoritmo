@@ -1,0 +1,175 @@
+/* Remove margens e espaçamentos automáticos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Configurações gerais da página */
+body {
+  min-height: 100vh;
+  padding: 20px;
+
+  background-color: #e2e8f0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1e293b;
+}
+
+/* Caixa principal */
+.container {
+  width: 100%;
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 30px;
+
+  border-radius: 12px;
+  background-color: #ffffff;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Título principal */
+h1 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #166534;
+}
+
+/* Texto de orientação */
+.orientacao {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #475569;
+}
+
+/* Títulos das seções */
+h2 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: #14532d;
+}
+
+/* Texto do campo */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Coloca o campo e o botão lado a lado */
+.grupo-campo {
+  display: flex;
+  gap: 10px;
+}
+
+/* Campo de entrada */
+input {
+  flex: 1;
+  padding: 12px;
+
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+/* Destaque quando o campo estiver selecionado */
+input:focus {
+  outline: 2px solid #22c55e;
+  border-color: #22c55e;
+}
+
+/* Estilo geral dos botões */
+button {
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* Botão de adicionar */
+form button {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+form button:hover {
+  background-color: #15803d;
+}
+
+/* Botão de gerar jogos */
+.btn-gerar {
+  margin-top: 15px;
+
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-gerar:hover {
+  background-color: #1d4ed8;
+}
+
+/* Botão de limpar */
+.btn-limpar {
+  margin-top: 15px;
+
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.btn-limpar:hover {
+  background-color: #b91c1c;
+}
+
+/* Lista dos clubes */
+#listaClubes {
+  padding-left: 25px;
+  line-height: 1.8;
+}
+
+/* Caixa de resultado */
+#resultado {
+  padding: 15px;
+
+  border-radius: 6px;
+  background-color: #dcfce7;
+
+  line-height: 1.8;
+}
+
+/* Esconde a caixa enquanto estiver vazia */
+#resultado:empty {
+  display: none;
+}
+
+/* Cada confronto */
+.jogo {
+  padding: 10px;
+  margin-bottom: 8px;
+
+  border-left: 4px solid #16a34a;
+  background-color: #f0fdf4;
+}
+
+/* Adaptação para telas pequenas */
+@media (max-width: 500px) {
+  .grupo-campo {
+    flex-direction: column;
+  }
+
+  .grupo-campo button {
+    width: 100%;
+  }
+
+  .btn-gerar,
+  .btn-limpar {
+    width: 100%;
+  }
+}

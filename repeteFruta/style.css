@@ -1,0 +1,110 @@
+/* Remove alguns espaçamentos automáticos do navegador */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilização geral da página */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  background-color: #f1f5f9;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Caixa principal */
+.container {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+  margin-bottom: 24px;
+  text-align: center;
+  color: #166534;
+}
+
+/* Organiza os elementos do formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Texto dos campos */
+label {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #334155;
+}
+
+/* Campos de entrada */
+input {
+  width: 100%;
+  padding: 12px;
+
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+/* Destaque quando o campo estiver selecionado */
+input:focus {
+  outline: 2px solid #22c55e;
+  border-color: #22c55e;
+}
+
+/* Botão */
+button {
+  margin-top: 14px;
+  padding: 12px;
+
+  border: none;
+  border-radius: 6px;
+
+  background-color: #16a34a;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+  background-color: #15803d;
+}
+
+/* Área onde aparecerá o resultado */
+#resultado {
+  margin-top: 24px;
+  padding: 15px;
+
+  border-radius: 6px;
+  background-color: #dcfce7;
+
+  color: #14532d;
+  font-weight: bold;
+
+  /* Permite quebrar textos muito grandes */
+  overflow-wrap: anywhere;
+}
+
+/* Esconde a caixa enquanto ela estiver vazia */
+#resultado:empty {
+  display: none;
+}
