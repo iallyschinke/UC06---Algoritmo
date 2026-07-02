@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Faz a página adaptar-se a celulares e tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Números em Ordem</title>
+
+    <!-- Conecta o arquivo CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Números em Ordem</h1>
+
+      <p class="orientacao">
+        Adicione números à lista e verifique se estão em ordem crescente.
+      </p>
+
+      <!-- Formulário para adicionar um número -->
+      <form id="formNumero">
+        <label for="numero">Número:</label>
+
+        <div class="grupo-campo">
+          <input type="number" id="numero" placeholder="Exemplo: 10" required />
+
+          <button type="submit">Adicionar</button>
+        </div>
+      </form>
+
+      <!-- Botões de controle -->
+      <div class="acoes">
+        <button type="button" id="btnVerificar" class="btn-verificar">
+          Verificar ordem
+        </button>
+
+        <button type="button" id="btnLimpar" class="btn-limpar">
+          Limpar lista
+        </button>
+      </div>
+
+      <section>
+        <h2>Números cadastrados</h2>
+
+        <!-- Lista que mostrará os números do vetor -->
+        <ul id="listaNumeros"></ul>
+      </section>
+
+      <!-- Área onde será mostrada a resposta -->
+      <p id="resultado" aria-live="polite"></p>
+    </main>
+
+    <!-- Conecta o arquivo JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
