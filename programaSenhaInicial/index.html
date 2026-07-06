@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Programa Senha Inicial</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <header class="cabecalho">
+          <div class="icone">🔐</div>
+
+          <h1>Senha Inicial</h1>
+
+          <p>Digite o nome completo do aluno para gerar sua senha inicial.</p>
+        </header>
+        <form id="formAluno">
+          <div class="campo">
+            <label for="nomeAluno">Nome completo do aluno</label>
+
+            <input
+              type="text"
+              id="nomeAluno"
+              placeholder="EX.: Ially Schinke"
+              autocomplete="off"
+            />
+
+            <small> Informe pelo menos o nome e o sobrenome. </small>
+          </div>
+
+          <div class="botoes">
+            <button type="submit" class="btn-gerar">Gerar senha</button>
+
+            <button type="button" id="btnLimpar" class="btn-limpar">
+              Limpar
+            </button>
+          </div>
+        </form>
+
+        <p id="mensagemErro" class="mensagem-erro"></p>
+
+        <div id="resultado" class="resultado oculto">
+          <h2>Senha gerada</h2>
+
+          <div class="linha-resultado">
+            <span>Aluno:</span>
+            <strong id="resultadoNome"></strong>
+          </div>
+
+          <div class="linha-resultado">
+            <span>Sobrenome</span>
+            <strong id="resultadoSobrenome"></strong>
+          </div>
+
+          <div class="linha-resultado">
+            <span>Quantidade de vogais:</span>
+            <strong id="resultadoVogais"></strong>
+          </div>
+
+          <div class="senha-container">
+            <span>Senha inicial</span>
+            <strong id="resultadoSenha"></strong>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

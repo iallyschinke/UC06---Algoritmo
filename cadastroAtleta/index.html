@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Categoria do Atleta</title>
+
+    <!-- Conexão com o arquivo CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <section class="card">
+        <div class="cabecalho">
+          <span class="icone">🏅</span>
+          <h1>Cadastro de Atleta</h1>
+          <p>Informe os dados para descobrir a categoria do atleta.</p>
+        </div>
+
+        <form id="formAtleta">
+          <div class="campo">
+            <label for="nomeAtleta">Nome do atleta</label>
+
+            <input
+              type="text"
+              id="nomeAtleta"
+              placeholder="Ex.: Gabriel Silva"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="idadeAtleta">Idade do atleta</label>
+
+            <input
+              type="number"
+              id="idadeAtleta"
+              placeholder="Ex.: 17"
+              min="1"
+              max="120"
+              required
+            />
+          </div>
+
+          <div class="botoes">
+            <button type="submit" class="btn-verificar">
+              Verificar atleta
+            </button>
+
+            <button type="button" id="btnLimpar" class="btn-limpar">
+              Limpar
+            </button>
+          </div>
+        </form>
+
+        <div id="resultado" class="resultado oculto">
+          <h2>Resultado</h2>
+
+          <div class="informacao">
+            <span>Nome:</span>
+            <strong id="resultadoNome"></strong>
+          </div>
+
+          <div class="informacao">
+            <span>Traços:</span>
+            <strong id="resultadoTracos"></strong>
+          </div>
+
+          <div class="informacao">
+            <span>Idade:</span>
+            <strong id="resultadoIdade"></strong>
+          </div>
+
+          <div class="informacao">
+            <span>Categoria:</span>
+            <strong id="resultadoCategoria" class="categoria"></strong>
+          </div>
+        </div>
+
+        <p id="mensagemErro" class="mensagem-erro"></p>
+      </section>
+    </main>
+
+    <!-- Conexão com o arquivo JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
