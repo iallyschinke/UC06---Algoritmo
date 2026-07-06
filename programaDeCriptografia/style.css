@@ -1,0 +1,149 @@
+/* Remove margens e espaçamentos automáticos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Configuração geral da página */
+body {
+  min-height: 100vh;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #e2e8f0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1e293b;
+}
+
+/* Caixa principal */
+.container {
+  width: 100%;
+  max-width: 650px;
+
+  padding: 30px;
+  border-radius: 12px;
+
+  background-color: #ffffff;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Título principal */
+h1 {
+  margin-bottom: 10px;
+
+  text-align: center;
+  color: #6d28d9;
+}
+
+/* Texto de orientação */
+.orientacao {
+  margin-bottom: 24px;
+
+  text-align: center;
+  color: #475569;
+}
+
+/* Organiza os elementos do formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Texto do campo */
+label {
+  font-weight: bold;
+}
+
+/* Campo da mensagem */
+textarea {
+  width: 100%;
+  padding: 12px;
+
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+
+  resize: vertical;
+}
+
+/* Destaque quando o campo estiver selecionado */
+textarea:focus {
+  outline: 2px solid #8b5cf6;
+  border-color: #8b5cf6;
+}
+
+/* Estilo geral dos botões */
+button {
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* Botão de criptografar */
+form button {
+  background-color: #7c3aed;
+  color: #ffffff;
+}
+
+form button:hover {
+  background-color: #6d28d9;
+}
+
+/* Botão de limpar */
+.btn-limpar {
+  width: 100%;
+  margin-top: 10px;
+
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.btn-limpar:hover {
+  background-color: #b91c1c;
+}
+
+/* Título da seção */
+h2 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  color: #4c1d95;
+}
+
+/* Área do resultado */
+#resultado {
+  padding: 15px;
+
+  border-radius: 6px;
+  background-color: #ede9fe;
+
+  color: #4c1d95;
+  font-weight: bold;
+
+  /* Mantém espaços e quebras de linha */
+  white-space: pre-wrap;
+
+  /* Quebra textos muito grandes */
+  overflow-wrap: anywhere;
+}
+
+/* Esconde o resultado enquanto estiver vazio */
+#resultado:empty {
+  display: none;
+}

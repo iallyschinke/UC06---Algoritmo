@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Faz a página adaptar-se a celulares e tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gerador de Referência Bibliográfica</title>
+
+  <!-- Conecta o arquivo CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="container">
+    <h1>📚 Gerador de Referência Bibliográfica</h1>
+
+    <p class="orientacao">
+      Digite o nome completo de um autor para gerar a referência.
+    </p>
+
+    <!-- Formulário para receber o nome do autor -->
+    <form id="formReferencia">
+      <label for="nomeAutor">Nome completo do autor:</label>
+
+      <input
+        type="text"
+        id="nomeAutor"
+        placeholder="Exemplo: Maurício Samy Silva"
+        autocomplete="off"
+        required
+      >
+
+      <button type="submit">
+        Gerar referência
+      </button>
+    </form>
+
+    <!-- Botão para limpar os dados -->
+    <button type="button" id="btnLimpar" class="btn-limpar">
+      Limpar
+    </button>
+
+    <section>
+      <h2>Referência gerada</h2>
+
+<!-- Área onde o JavaScript exibirá o resultado -->
+      <p id="resultado" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <!-- Conecta o arquivo JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

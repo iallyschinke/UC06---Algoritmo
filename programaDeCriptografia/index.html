@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Criptografia por Transposição</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>🔐 Criptografia por Transposição</h1>
+      <p class="orientacao">
+        Digite uma mensagem para gerar o texto criptografado
+      </p>
+
+      <form id="formCriptografia">
+        <label for="mensagem">Mensagem Original:</label>
+        <textarea
+          id="mensagem"
+          rows="5"
+          placeholder="Exemplo: proponha uma troca"
+          required
+        ></textarea>
+
+        <button type="submit">Criptografar</button>
+      </form>
+
+      <button type="button" id="btnLimpar" class="btnLimpar">Limpar</button>
+      <section>
+        <h2>Mensagem criptografada</h2>
+        <p id="resultado" aria-live="polite"></p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

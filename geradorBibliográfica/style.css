@@ -1,0 +1,143 @@
+/* Remove margens e espaçamentos automáticos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Configurações gerais da página */
+body {
+  min-height: 100vh;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #e2e8f0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1e293b;
+}
+
+/* Caixa principal */
+.container {
+  width: 100%;
+  max-width: 600px;
+
+  padding: 30px;
+  border-radius: 12px;
+
+  background-color: #ffffff;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Título principal */
+h1 {
+  margin-bottom: 10px;
+
+  text-align: center;
+  color: #7c2d12;
+}
+
+/* Texto de orientação */
+.orientacao {
+  margin-bottom: 24px;
+
+  text-align: center;
+  color: #475569;
+}
+
+/* Organiza os elementos do formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Texto do campo */
+label {
+  font-weight: bold;
+}
+
+/* Campo de entrada */
+input {
+  width: 100%;
+  padding: 12px;
+
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+/* Destaque quando o campo estiver selecionado */
+input:focus {
+  outline: 2px solid #ea580c;
+  border-color: #ea580c;
+}
+
+/* Estilo geral dos botões */
+button {
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* Botão de gerar */
+form button {
+  background-color: #ea580c;
+  color: #ffffff;
+}
+
+form button:hover {
+  background-color: #c2410c;
+}
+
+/* Botão de limpar */
+.btn-limpar {
+  width: 100%;
+  margin-top: 10px;
+
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.btn-limpar:hover {
+  background-color: #b91c1c;
+}
+
+/* Título da área do resultado */
+h2 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  color: #7c2d12;
+}
+
+/* Área do resultado */
+#resultado {
+  padding: 15px;
+
+  border-radius: 6px;
+  background-color: #ffedd5;
+
+  color: #7c2d12;
+  font-size: 18px;
+  font-weight: bold;
+
+  overflow-wrap: anywhere;
+}
+
+/* Esconde a área enquanto estiver vazia */
+#resultado:empty {
+  display: none;
+}
