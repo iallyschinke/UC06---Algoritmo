@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lista de Compras Ordenada</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <section class="card">
+        <header class="cabecalho">
+          <div class="icone">🛒</div>
+
+          <p class="subtitulo">Organize suas compras</p>
+
+          <h1>Lista de Compras</h1>
+
+          <p class="descricao">Cadastre os produtos que deseja comprar.</p>
+        </header>
+
+        <form id="formProduto">
+          <div class="campo">
+            <label for="produto">Nome do produto</label>
+
+            <input
+              type="text"
+              id="produto"
+              placeholder="Ex.: Arroz"
+              autocomplete="off"
+            />
+          </div>
+
+          <button type="submit" class="btn-adicionar">Adicionar produto</button>
+        </form>
+
+        <p id="mensagem" class="mensagem"></p>
+
+        <div class="lista-container">
+          <div class="lista-cabecalho">
+            <h2>Produtos cadastrados</h2>
+
+            <span id="quantidadeProdutos">0 itens</span>
+          </div>
+
+          <ul id="listaProdutos" class="lista-produtos"></ul>
+
+          <p id="listaVazia" class="lista-vazia">Nenhum produto cadastrado.</p>
+        </div>
+
+        <button type="button" id="btnLimparLista" class="btn-limpar">
+          Limpar lista
+        </button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
