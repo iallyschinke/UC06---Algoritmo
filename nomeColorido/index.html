@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Partes do Nome</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <header class="cabecalho">
+          <div class="icone">🎨</div>
+
+          <p class="subtitulo">Programa Partes do Nome</p>
+
+          <h1>Nome em Cores</h1>
+
+          <p class="descricao">
+            Digite um nome completo para exibir cada parte com uma cor
+            aleátoria.
+          </p>
+        </header>
+
+        <form id="formNome">
+          <div class="campo">
+            <label for="nomeCompleto">Nome completo</label>
+
+            <input
+              type="text"
+              id="nomeCompleto"
+              placeholder="Ex.: Ially Leão Schinke"
+              autocomplete="off"
+            />
+          </div>
+
+          <button type="submit" class="btn-exibir">
+            Exibir partes do nome
+          </button>
+
+          <button type="button" id="btnLimpar" class="btn-limpar">
+            Limpar
+          </button>
+        </form>
+
+        <p id="mensagemErro" class="mensagem-erro"></p>
+
+        <section id="resultado" class="resultado oculto">
+          <h2>Partes do nome</h2>
+
+          <div id="partesNome" class="partes-nome"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
