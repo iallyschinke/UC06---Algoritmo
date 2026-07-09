@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>JOckey Club - Controle de Apostas</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <header class="cabecalho">
+          <div class="icone">🏇</div>
+
+          <p class="subtitulo">Sistema de apostas</p>
+
+          <h1>Jockey Club</h1>
+
+          <p class="descricao">
+            Cadastre as apostas do páreo e informe o cavalo vencedor para
+            visualizar o resultado final.
+          </p>
+        </header>
+
+        <section class="cavalos-container">
+          <h2>Cavalos participantes</h2>
+
+          <div id="listaCavalos" class="lista-cavalos"></div>
+        </section>
+
+        <form id="formAposta">
+          <div class="campos">
+            <div class="campo">
+              <label for="inCavalo">Número do cavalo</label>
+              <input
+                type="number"
+                id="inCavalo"
+                min="1"
+                max="6"
+                placeholder="Ex.: 3"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="inValor">Valor da aposta</label>
+              <input
+                type="number"
+                id="inValor"
+                min="0.01"
+                step="0.01"
+                placeholder="Ex.: 50,00"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <p id="outCavalo" class="dados-cavalo"></p>
+          <div class="botoes">
+            <button type="submit" class="btn-apostar">Apostar</button>
+
+            <button type="button" id="btGanhador" class="btn-ganhador">
+              Informar ganhador
+            </button>
+
+            <button type="button" id="btNovo" class="btn-novo">
+              Novo páreo
+            </button>
+
+            <button type="button" id="btLimparTudo" class="btn-limpar-tudo">
+              Limpar todas as reservas
+            </button>
+          </div>
+        </form>
+        <p id="mensagem" class="mensagem"></p>
+
+        <section class="apostas-container">
+          <div class="titulo-apostas">
+            <h2>Apostas realizadas</h2>
+
+            <span id="outApostas" class="lista-apostas">0 apostas</span>
+          </div>
+
+          <div id="outApostas" class="lista-apostas">
+            <p class="lista-vazia">Nenhuma aposta foi realizada</p>
+          </div>
+        </section>
+
+        <section id="resultadoFinal" class="resultado-final oculto">
+          <p class="resultado-subtitulo">Resultado do páreo</p>
+
+          <h2 id="resultadoGanhador"></h2>
+
+          <div class="resumo-grid">
+            <div class="resumo-item">
+              <span>Total apostas</span>
+              <strong id="resultadoQuantidade">0</strong>
+            </div>
+
+            <div class="resumo-item">
+              <span>Total geral</span>
+              <strong id="resultadoTotalGeral">R$ 0,00</strong>
+            </div>
+
+            <div class="resumo-item">
+              <span>Apostas no vencedor</span>
+              <strong id="resultadoApostasGanhador">0</strong>
+            </div>
+
+            <div class="resumo-item">
+              <span>Total no Vencedor</span>
+              <strong id="resultadoTotalGanhador">R$ 0,00</strong>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
