@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Jogo Descubra a Palavra</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <section class="card">
+        <header class="cabecalho">
+          <div class="icone">💡</div>
+
+          <p class="subtitulo">Jogo de palavras</p>
+
+          <h1>Descubra a Palavra</h1>
+
+          <p class="descricao">
+            Cadastre palavras e dicas, organize sua lista e tente descobrir a
+            palavra sorteada.
+          </p>
+        </header>
+
+        <nav class="navegacao">
+          <button
+            type="button"
+            class="btn-nav ativo"
+            data-secao="secaoCadastro"
+          >
+            Cadastrar
+          </button>
+
+          <button type="button" class="btn-nav" data-secao="secaoLista">
+            Listar palavras
+          </button>
+
+          <button type="button" class="btn-nav" data-secao="secaoJogo">
+            Iniciar jogo
+          </button>
+        </nav>
+
+        <p id="mensagem" class="mensagem"></p>
+
+        <!-- Cadastro -->
+        <section id="secaoCadastro" class="secao">
+          <div class="titulo-secao">
+            <span>01</span>
+
+            <div>
+              <h2>Cadastrar palavras</h2>
+              <p>Informe uma palavra sem espaços e sua respectiva dica.</p>
+            </div>
+          </div>
+
+          <form id="formCadastro">
+            <div class="campo">
+              <label for="inPalavra">Palavra</label>
+
+              <input
+                type="text"
+                id="inPalavra"
+                placeholder="Ex.: JavaScript"
+                autocomplete="off"
+                autofocus
+              />
+            </div>
+
+            <div class="campo">
+              <label for="inDica">Dica da palavra</label>
+
+              <input
+                type="text"
+                id="inDica"
+                placeholder="Ex.: Linguagem usada em páginas web"
+                autocomplete="off"
+              />
+            </div>
+
+            <button type="submit" class="btn-principal">
+              Cadastrar palavra
+            </button>
+          </form>
+
+          <div class="resumo-cadastro">
+            <span>Palavras cadastradas</span>
+            <strong id="totalPalavras">0</strong>
+          </div>
+        </section>
+
+        <!-- Listagem -->
+        <section id="secaoLista" class="secao oculto">
+          <div class="titulo-secao">
+            <span>02</span>
+
+            <div>
+              <h2>Listagem das palavras</h2>
+              <p>
+                Marque a opção abaixo para visualizar as palavras cadastradas.
+              </p>
+            </div>
+          </div>
+
+          <label class="controle-mostrar">
+            <input type="checkbox" id="ckMostrar" />
+            <span>Mostrar palavras cadastradas</span>
+          </label>
+
+          <div id="areaTabela" class="area-tabela oculto">
+            <div class="tabela-responsiva">
+              <table id="tbPalavras">
+                <thead>
+                  <tr>
+                    <th>Palavra</th>
+                    <th>Dica</th>
+
+                    <th class="coluna-checkbox">
+                      <label>
+                        <input type="checkbox" id="ckTodos" />
+                        Todos
+                      </label>
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody id="corpoTabela"></tbody>
+              </table>
+            </div>
+
+            <p id="listaVazia" class="lista-vazia oculto">
+              Nenhuma palavra foi cadastrada.
+            </p>
+
+            <button type="button" id="btExcluir" class="btn-excluir">
+              Excluir selecionadas
+            </button>
+          </div>
+        </section>
+
+        <!-- Jogo -->
+        <section id="secaoJogo" class="secao oculto">
+          <div class="titulo-secao">
+            <span>03</span>
+
+            <div>
+              <h2>Iniciar jogo</h2>
+              <p>Uma palavra cadastrada será sorteada aleatoriamente.</p>
+            </div>
+          </div>
+
+          <div id="jogoInicial" class="jogo-inicial">
+            <div class="icone-jogo">🎲</div>
+
+            <p>Cadastre pelo menos uma palavra antes de começar.</p>
+
+            <button type="button" id="btIniciar" class="btn-principal">
+              Sortear palavra
+            </button>
+          </div>
+
+          <div id="areaJogo" class="area-jogo oculto">
+            <div class="painel-dica">
+              <span>Dica</span>
+              <strong id="outDica"></strong>
+            </div>
+
+            <div
+              id="palavraOculta"
+              class="palavra-oculta"
+              aria-label="Palavra oculta"
+            ></div>
+
+            <div class="dados-jogo">
+              <span>
+                Erros:
+                <strong id="outErros">0</strong>
+              </span>
+
+              <span>
+                Tentativas restantes:
+                <strong id="outTentativas">6</strong>
+              </span>
+            </div>
+
+            <form id="formLetra" class="form-letra">
+              <div class="campo campo-letra">
+                <label for="inLetra">Digite uma letra</label>
+
+                <input
+                  type="text"
+                  id="inLetra"
+                  maxlength="1"
+                  placeholder="A"
+                  autocomplete="off"
+                />
+              </div>
+
+              <button type="submit" class="btn-tentar">Verificar letra</button>
+            </form>
+
+            <div class="letras-utilizadas">
+              <span>Letras utilizadas:</span>
+              <strong id="outLetras">Nenhuma</strong>
+            </div>
+
+            <div class="acoes-jogo">
+              <button type="button" id="btNovoJogo" class="btn-secundario">
+                Sortear outra palavra
+              </button>
+
+              <button type="button" id="btRevelar" class="btn-revelar">
+                Revelar palavra
+              </button>
+            </div>
+
+            <p id="resultadoJogo" class="resultado-jogo"></p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
