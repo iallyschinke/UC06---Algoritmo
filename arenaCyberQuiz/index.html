@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Arena Cyber Quiz</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <section class="card">
+        <header class="cabecalho">
+          <div class="icone">🎮</div>
+
+          <p class="subtitulo">Desafio de Pontuação</p>
+
+          <h1>Arena Cyber Quiz</h1>
+
+          <p class="descricao">
+            Cadastre jogadores, registre acertos e erros, calcule o
+            aproveitamento e descubra quem domina a arena.
+          </p>
+        </header>
+
+        <form id="formJogador">
+          <div class="campos">
+            <div class="campo campo-nome">
+              <label for="inNome">Nome do jogador</label>
+
+              <input
+                type="text"
+                id="inNome"
+                placeholder="Ex.: Versales"
+                autocomplete="off"
+                autofocus
+              />
+            </div>
+
+            <div class="campo">
+              <label for="inAcertos">Acertos</label>
+
+              <input
+                type="number"
+                id="inAcertos"
+                min="0"
+                placeholder="Ex.: 8"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="inErros">Erros</label>
+
+              <input type="number" id="inErros" min="0" placeholder="Ex.: 2" />
+            </div>
+          </div>
+
+          <div class="botoes">
+            <button type="submit" class="btn-cadastrar">
+              Cadastrar jogador
+            </button>
+
+            <button type="button" id="btLimpar" class="btn-limpar">
+              Limpar campos
+            </button>
+
+            <button type="button" id="btRestaurar" class="btn-restaurar">
+              Restaurar arena
+            </button>
+          </div>
+        </form>
+
+        <p id="mensagem" class="mensagem"></p>
+
+        <section class="painel-resumo">
+          <div class="resumo-item">
+            <span>Jogadores</span>
+            <strong id="outTotalJogadores">0</strong>
+          </div>
+
+          <div class="resumo-item destaque">
+            <span>Melhor jogador</span>
+            <strong id="outMelhorJogador">Nenhum</strong>
+          </div>
+
+          <div class="resumo-item">
+            <span>Melhor aproveitamento</span>
+            <strong id="outMelhorAproveitamento">0%</strong>
+          </div>
+        </section>
+
+        <section class="ranking">
+          <div class="titulo-ranking">
+            <h2>Ranking da Arena</h2>
+
+            <p>Os jogadores são exibidos do melhor para o pior resultado.</p>
+          </div>
+
+          <div id="listaJogadores" class="lista-jogadores">
+            <p class="lista-vazia">Nenhum jogador cadastrado.</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

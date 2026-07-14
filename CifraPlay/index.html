@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CifraPlay</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <section class="card">
+        <header class="cabecalho">
+          <div class="icone">🎸</div>
+
+          <p class="subtitulo">Catálogo musical</p>
+
+          <h1>CifraPlay</h1>
+
+          <p class="descricao">
+            Cadastre músicas com artista, tom, categoria, letra e acordes.
+            Depois visualize a cifra completa em formato organizado.
+          </p>
+        </header>
+
+        <form id="formMusica">
+          <div class="campos">
+            <div class="campo">
+              <label for="inTitulo">Nome da música</label>
+
+              <input
+                type="text"
+                id="inTitulo"
+                placeholder="Ex.: Noite Estrelada"
+                autocomplete="off"
+                autofocus
+              />
+            </div>
+
+            <div class="campo">
+              <label for="inArtista">Artista</label>
+
+              <input
+                type="text"
+                id="inArtista"
+                placeholder="Ex.: Versales"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="inTom">Tom</label>
+
+              <select id="inTom">
+                <option value="">Selecione</option>
+                <option value="C">C</option>
+                <option value="C#">C#</option>
+                <option value="D">D</option>
+                <option value="D#">D#</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="F#">F#</option>
+                <option value="G">G</option>
+                <option value="G#">G#</option>
+                <option value="A">A</option>
+                <option value="A#">A#</option>
+                <option value="B">B</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="inCategoria">Categoria</label>
+
+              <select id="inCategoria">
+                <option value="">Selecione</option>
+                <option value="Rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="MPB">MPB</option>
+                <option value="Gospel">Gospel</option>
+                <option value="Sertanejo">Sertanejo</option>
+                <option value="Forró">Forró</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="inCifra">Letra com acordes</label>
+
+            <textarea
+              id="inCifra"
+              placeholder="[Em] Hoje eu acordei pensando em você&#10;[C] Vi o sol nascer sem entender&#10;[G] Cada acorde me leva ao lugar&#10;[D] Onde a saudade quer cantar"
+            ></textarea>
+          </div>
+
+          <div class="botoes">
+            <button type="submit" class="btn-cadastrar">
+              Cadastrar música
+            </button>
+
+            <button type="button" id="btLimpar" class="btn-limpar">
+              Limpar campos
+            </button>
+
+            <button type="button" id="btRestaurar" class="btn-restaurar">
+              Restaurar catálogo
+            </button>
+          </div>
+        </form>
+
+        <p id="mensagem" class="mensagem"></p>
+
+        <section class="painel-resumo">
+          <div class="resumo-item">
+            <span>Músicas cadastradas</span>
+            <strong id="outTotalMusicas">0</strong>
+          </div>
+
+          <div class="resumo-item destaque">
+            <span>Música aberta</span>
+            <strong id="outMusicaAberta">Nenhuma</strong>
+          </div>
+
+          <div class="resumo-item">
+            <span>Tom atual</span>
+            <strong id="outTomAtual">-</strong>
+          </div>
+        </section>
+
+        <section class="area-pesquisa">
+          <label for="inPesquisa">Pesquisar música ou artista</label>
+
+          <input
+            type="text"
+            id="inPesquisa"
+            placeholder="Digite para pesquisar..."
+            autocomplete="off"
+          />
+        </section>
+
+        <section class="layout-musicas">
+          <div class="lista-area">
+            <div class="titulo-area">
+              <h2>Músicas cadastradas</h2>
+              <p>Escolha uma música para visualizar a cifra.</p>
+            </div>
+
+            <div id="listaMusicas" class="lista-musicas">
+              <p class="lista-vazia">Nenhuma música cadastrada.</p>
+            </div>
+          </div>
+
+          <div class="visualizador">
+            <div class="titulo-area">
+              <h2>Cifra</h2>
+              <p>Acordes destacados automaticamente.</p>
+            </div>
+
+            <div id="cifraAberta" class="cifra-aberta">
+              <p class="lista-vazia">Nenhuma cifra aberta.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
